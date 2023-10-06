@@ -12,15 +12,7 @@ pipeline{
                 //bat 'python main.py'
                 
             }
-        stage ("Junit Test Run")
-        {
-            steps{
-                bat 'javac Palindrome.java'
-                bat 'java Palindrome'
-                bat 'javac PalindromeTest.java'
-                bat 'java PalindromeTest'
-            }
-        } 
+        
             post{
                 always{
                     echo "========always========"
@@ -33,6 +25,26 @@ pipeline{
                 }
             }
         }
+        stage ("Junit Test Run")
+        {
+            steps{
+                bat 'javac Palindrome.java'
+                bat 'java Palindrome'
+                bat 'javac PalindromeTest.java'
+                bat 'java PalindromeTest'
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========Palindrome executed successfully========"
+                }
+                failure{
+                    echo "========Palindrome execution failed========"
+                }
+            }
+        } 
     }
     post{
         always{
