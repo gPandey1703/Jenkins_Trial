@@ -60,7 +60,7 @@ pipeline{
             }
             post{
                 always{
-                    echo "========always========"
+                    junit 'build/reports/**/*.xml'
                 }
                 success{
                     echo "========Calculator Test Cases executed successfully========"
