@@ -57,6 +57,30 @@ pipeline{
                 // bat 'java PalindromeTest'
                 bat 'python operations.py'
                 bat 'python test_calculator.py'
+                //bat 'python -m pytest --verbose --junit-xml reports/unit_tests.xml'
+            }
+            post{
+                always{
+                    //junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
+                    echo "========always========"
+                }
+                success{
+                    echo "========Calculator Test Cases executed successfully========"
+                }
+                failure{
+                    echo "========Calculator Test Cases execution failed========"
+                }
+            }
+        }
+        stage ("Test Report Generation")
+        {
+            steps{
+                // bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
+                // bat 'javac Palindrome.java'
+                // bat 'java Palindrome'
+                // bat 'javac PalindromeTest.java'
+                // bat 'java PalindromeTest'
+                
                 bat 'python -m pytest --verbose --junit-xml reports/unit_tests.xml'
             }
             post{
