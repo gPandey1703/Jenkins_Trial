@@ -6,9 +6,9 @@ pipeline{
         stage("Hello"){
             steps{
                 echo "========executing Hello Stage========"
-                bat 'python3 --version'
-                bat 'python3 myfile.py'
-                bat 'python3 main.py'
+                bat 'python --version'
+                bat 'python myfile.py'
+                bat 'python main.py'
             }
             post{
                 always{
