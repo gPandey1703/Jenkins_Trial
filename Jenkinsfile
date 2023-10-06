@@ -8,6 +8,8 @@ pipeline{
                 echo "========executing Hello Stage========"
                 bat 'python --version'
                 bat 'python myfile.py'
+                bat 'javac Palindrome.java'
+                bat 'java Palindrome'
                 //bat 'python main.py'
                 
             }
