@@ -28,6 +28,7 @@ pipeline{
         stage ("Junit Test Run")
         {
             steps{
+                bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
                 bat 'javac Palindrome.java'
                 bat 'java Palindrome'
                 bat 'javac PalindromeTest.java'
