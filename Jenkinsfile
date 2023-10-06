@@ -134,6 +134,9 @@ pipeline{
         }
         failure{
             echo "========pipeline execution failed========"
+            mail to : "gauravpandey17032002@gmail.com",
+            subject : "Pipeline Failed",
+            body : "Pipeline Failed"
         }
     }
 }
