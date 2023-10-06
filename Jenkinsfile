@@ -56,7 +56,7 @@ pipeline{
                 // bat 'javac PalindromeTest.java'
                 // bat 'java PalindromeTest'
                 bat 'python operations.py'
-                bat 'python unit-test.py'
+                bat 'python test_calculator.py'
                 bat 'python -m pytest --verbose --junit-xml reports/unit_tests.xml'
             }
             post{
