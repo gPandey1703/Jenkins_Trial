@@ -25,28 +25,28 @@ pipeline{
                 }
             }
         }
-        stage ("Running Calculator File")
-        {
-            steps{
-                // bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
-                // bat 'javac Palindrome.java'
-                // bat 'java Palindrome'
-                // bat 'javac PalindromeTest.java'
-                // bat 'java PalindromeTest'
-                bat 'python calc.py'
-            }
-            post{
-                always{
-                    echo "========always========"
-                }
-                success{
-                    echo "========Calculator executed successfully========"
-                }
-                failure{
-                    echo "========Calculator execution failed========"
-                }
-            }
-        } 
+        // stage ("Running Calculator File")
+        // {
+        //     steps{
+        //         // bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
+        //         // bat 'javac Palindrome.java'
+        //         // bat 'java Palindrome'
+        //         // bat 'javac PalindromeTest.java'
+        //         // bat 'java PalindromeTest'
+        //         bat 'python calc.py'
+        //     }
+        //     post{
+        //         always{
+        //             echo "========always========"
+        //         }
+        //         success{
+        //             echo "========Calculator executed successfully========"
+        //         }
+        //         failure{
+        //             echo "========Calculator execution failed========"
+        //         }
+        //     }
+        // } 
         stage ("Running Operations and test file")
         {
             steps{
