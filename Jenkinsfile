@@ -6,6 +6,8 @@ pipeline{
         stage("Hello"){
             steps{
                 echo "========executing Hello Stage========"
+                sh 'python myfile.py'
+                sh 'python main.py'
             }
             post{
                 always{
