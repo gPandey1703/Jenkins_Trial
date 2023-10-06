@@ -25,27 +25,51 @@ pipeline{
                 }
             }
         }
-        stage ("Junit Test Run")
+        stage ("Running Calculator File")
         {
             steps{
-                bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
-                bat 'javac Palindrome.java'
-                bat 'java Palindrome'
-                bat 'javac PalindromeTest.java'
-                bat 'java PalindromeTest'
+                // bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
+                // bat 'javac Palindrome.java'
+                // bat 'java Palindrome'
+                // bat 'javac PalindromeTest.java'
+                // bat 'java PalindromeTest'
+                bat 'python calc.py'
             }
             post{
                 always{
                     echo "========always========"
                 }
                 success{
-                    echo "========Palindrome executed successfully========"
+                    echo "========Calculator executed successfully========"
                 }
                 failure{
-                    echo "========Palindrome execution failed========"
+                    echo "========Calculator execution failed========"
                 }
             }
         } 
+        stage ("Running Operations and test file")
+        {
+            steps{
+                // bat 'java -Xms1300m -Xmx1300m -classpath "myClassPath;anotherone;anotherOne" -Xdebug "-Djava.compiler=NONE" "-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"'
+                // bat 'javac Palindrome.java'
+                // bat 'java Palindrome'
+                // bat 'javac PalindromeTest.java'
+                // bat 'java PalindromeTest'
+                bat 'python operations.py'
+                bat 'python unit-test.py'
+            }
+            post{
+                always{
+                    echo "========always========"
+                }
+                success{
+                    echo "========Calculator Test Cases executed successfully========"
+                }
+                failure{
+                    echo "========Calculator Test Cases execution failed========"
+                }
+            }
+        }
     }
     post{
         always{
