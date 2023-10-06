@@ -57,10 +57,11 @@ pipeline{
                 // bat 'java PalindromeTest'
                 bat 'python operations.py'
                 bat 'python unit-test.py'
+                bat 'python -m pytest --verbose --junit-xml reports/unit_tests.xml'
             }
             post{
                 always{
-                    junit 'build/reports/**/*.xml'
+                    junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
                 }
                 success{
                     echo "========Calculator Test Cases executed successfully========"
