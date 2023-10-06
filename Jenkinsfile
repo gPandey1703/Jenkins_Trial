@@ -8,11 +8,19 @@ pipeline{
                 echo "========executing Hello Stage========"
                 bat 'python --version'
                 bat 'python myfile.py'
-                bat 'javac Palindrome.java'
-                bat 'java Palindrome'
+                
                 //bat 'python main.py'
                 
             }
+        stage ("Junit Test Run")
+        {
+            steps{
+                bat 'javac Palindrome.java'
+                bat 'java Palindrome'
+                bat 'javac PalindromeTest.java'
+                bat 'java PalindromeTest'
+            }
+        } 
             post{
                 always{
                     echo "========always========"
