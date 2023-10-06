@@ -8,7 +8,8 @@ pipeline{
                 echo "========executing Hello Stage========"
                 bat 'python --version'
                 bat 'python myfile.py'
-                bat 'python main.py'
+                //bat 'python main.py'
+                
             }
             post{
                 always{
