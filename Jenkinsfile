@@ -95,6 +95,7 @@ pipeline{
                 }
                 failure{
                     echo "========Calculator Test Cases execution failed========"
+                    echo "HI Hello"
                 }
             }
         }
