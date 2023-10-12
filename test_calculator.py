@@ -18,7 +18,7 @@ class TestSum(unittest.TestCase):
         self.assertEqual(multiply(10, 10), 100)
 
     def test_division_operation_returns_incorrect_value(self):
-        self.assertEqual(divide(100, 10), 10)
+        self.assertEqual(divide(100, 20), 10)
 
     def test_division_operation_returns_error_when_divided_by_zero(self):
         self.assertEqual(divide(10, 0), "Zero Division Error!")
