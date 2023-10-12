@@ -62,18 +62,18 @@ pipeline{
                 bat 'python test_calculator.py'
                 //bat 'python -m pytest --verbose --junit-xml reports/unit_tests.xml'
             }
-            post{
-                always{
-                    //junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
-                    echo "========always========"
-                }
-                success{
-                    echo "========Calculator Test Cases executed successfully========"
-                }
-                failure{
-                    echo "========Calculator Test Cases execution failed========"
-                }
-            }
+            // post{
+            //     always{
+            //         //junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
+            //         echo "========always========"
+            //     }
+            //     success{
+            //         echo "========Calculator Test Cases executed successfully========"
+            //     }
+            //     failure{
+            //         echo "========Calculator Test Cases execution failed========"
+            //     }
+            // }
         }
         stage ("Test Report Generation")
         {
