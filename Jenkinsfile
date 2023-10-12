@@ -86,18 +86,18 @@ pipeline{
                 
                 bat 'python -m pytest --verbose --junit-xml reports/unit_tests.xml'
             }
-            post{
-                always{
-                    junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
-                }
-                success{
-                    echo "========Calculator Test Cases executed successfully========"
-                }
-                failure{
-                    echo "========Calculator Test Cases execution failed========"
-                    echo "HI Hello"
-                }
-            }
+            // post{
+            //     always{
+            //         junit allowEmptyResults: true, testResults: 'reports/unit_tests.xml'
+            //     }
+            //     success{
+            //         echo "========Calculator Test Cases executed successfully========"
+            //     }
+            //     failure{
+            //         echo "========Calculator Test Cases execution failed========"
+            //         echo "HI Hello"
+            //     }
+            // }
         }
         stage('Checking Commit Changes')
         {
