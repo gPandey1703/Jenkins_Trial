@@ -99,6 +99,12 @@ pipeline{
                 }
             }
         }
+        stage('Checking Commit Changes')
+        {
+            steps{
+                echo "HI Hemant "
+            }
+        }
         // stage ("Email Notification")
         // {
         //     steps{
